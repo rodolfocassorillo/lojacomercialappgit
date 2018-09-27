@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cliente</ion-title>
+    <!-- <ion-buttons end>
+    <button ion-button icon-only (click)="buscarCliente()">
+    <ion-icon name="search" md="md-search" ios="ios-search"></ion-icon>
+  </button>
+</ion-buttons> -->
+</ion-navbar>
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item *ngFor="let cl of items | async" (click)="editarRemover(cl)">
+      <ion-icon name="person" ios="ios-person" md="md-person" item-start></ion-icon>
+      {{cl.nome}}
+    </button>
+  </ion-list>
+
+</ion-content>
+
+<ion-fab right bottom>
+  <button ion-fab (click)="openClientePage()"><ion-icon name="add"></ion-icon></button>
+</ion-fab>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editar Produto</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="showConfirmExcluir()">
+      <ion-icon name="trash" md="md-trash" ios="ios-trash"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="alterarProduto()">
+      <ion-icon name="checkmark" md="md-checkmark" ios="ios-checkmark"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating="">Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="this.produto.descricaoProduto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Quantidade Estoque</ion-label>
+      <ion-input type="number" (ngModelChange)="produto.qtEstoque = converterNumber($event)" [(ngModel)]="produto.qtEstoque"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Código de Barra</ion-label>
+      <ion-input type="number" (ngModelChange)="produto.codBarra = converterNumber($event)" [(ngModel)]="produto.codBarra"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Valor de Custo</ion-label>
+      <ion-input type="number" (ngModelChange)="produto.valorCusto = converterNumber($event)" [(ngModel)]="produto.valorCusto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Valor de Venda</ion-label>
+      <ion-input type="number" (ngModelChange)="produto.valorVenda = converterNumber($event)" [(ngModel)]="produto.valorVenda"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">% Máx. de Desconto</ion-label>
+      <ion-input type="number" (ngModelChange)="produto.pcMaxDesconto = converterNumber($event)" [(ngModel)]="produto.pcMaxDesconto"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Observação</ion-label>
+      <ion-input type="text" [(ngModel)]="this.produto.observacao"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

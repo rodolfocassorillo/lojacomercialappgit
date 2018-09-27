@@ -1,0 +1,59 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+
+    <!-- <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list> -->
+    <ion-list>
+      <ion-item>
+        <div class=“login”>
+
+        </div>
+        <div class=“principal”>
+          <button menuClose ion-item (click)="nav.setRoot(pagesLoja.homePage)">
+            <ion-icon item-start item-left name="podium"></ion-icon>Principal
+          </button>
+          <button menuClose ion-item (click)="nav.setRoot(pagesLoja.vendaListPage)">
+            <ion-icon item-start item-left name="cart"></ion-icon>Vendas
+          </button>
+          <button menuClose ion-item (click)="nav.setRoot(pagesLoja.transmissaoPage)">
+            <ion-icon item-start item-left name="cloud-upload"></ion-icon>Transmissão
+          </button>
+        </div>
+
+        <div class="cadastros-separator" style="height:1px;background:#C0C0C0;border-bottom:1px;margin-top:10px"></div>
+
+        <div class="cadastros" style="margin-top:15px">
+          <h6>Cadastros</h6>
+          <button menuClose ion-item (click)="nav.setRoot(pagesLoja.clienteListPage)">
+            <ion-icon item-start item-left name="people"></ion-icon>Clientes
+          </button>
+          <button menuClose ion-item (click)="nav.setRoot(pagesLoja.produtoListPage)">
+            <ion-icon item-start item-left name="cube"></ion-icon>Produtos
+          </button>
+        </div>
+
+        <div class="config-separator" style="height:1px;background:#C0C0C0;border-bottom:1px;"></div>
+
+        <div class="config">
+        <button menuClose ion-item (click)="nav.setRoot(pagesLoja.produtoListPage)">
+          Configurações
+        </button>
+        </div>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

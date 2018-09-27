@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cliente</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="cadastrarCliente()">
+        <ion-icon name="checkmark" md="md-checkmark" ios="ios-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating="">Código</ion-label>
+      <ion-input type="text" [(ngModel)]="this.cliente.idCliente"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="this.cliente.nome"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

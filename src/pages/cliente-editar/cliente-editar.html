@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editar Cliente</ion-title>
+    <ion-buttons end>
+    <button ion-button icon-only (click)="showConfirmExcluir()">
+      <ion-icon name="trash" md="md-trash" ios="ios-trash"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="alterarCliente()">
+      <ion-icon name="checkmark" md="md-checkmark" ios="ios-checkmark"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating="">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="this.cliente.nome"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
